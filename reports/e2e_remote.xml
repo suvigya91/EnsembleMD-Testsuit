@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="1" name="pytest" skips="0" tests="5" time="407.807"><testcase classname="tests.tests.E2E_test.test_1" file="tests/tests/E2E_test/test_1.py" line="2" name="test_answer" time="0.000726699829102"><failure message="assert 0">cmdopt = &apos;xsede.stampede&apos;
+
+    def test_answer(cmdopt):
+        if cmdopt == &quot;type1&quot;:
+            print (&quot;first&quot;)
+        elif cmdopt == &quot;type2&quot;:
+            print (&quot;second&quot;)
+&gt;       assert 0 # to see what was printed
+E       assert 0
+
+test_1.py:8: AssertionError</failure></testcase><testcase classname="tests.tests.E2E_test.test_allpairs_example.TestAllPairs" file="tests/tests/E2E_test/test_allpairs_example.py" line="81" name="test_all_pairs_remote" time="101.486057997"><system-out>project:  TG-MCB090174
+username:  tg831932
+Creating Element 1
+
+Comparing asciifile_1.dat with newfile_1.dat. Saving result in comparison_1_1.log
+Pattern Execution Completed Successfully! Result files are downloaded!
+</system-out></testcase><testcase classname="tests.tests.E2E_test.test_pipeline_E2E.TestPipelinePattern" file="tests/tests/E2E_test/test_pipeline_E2E.py" line="23" name="test_pipeline_remote" time="94.1838159561"><system-out>project:  TG-MCB090174
+username:  tg831932
+Name of file:  /home/suvigya/radical.ensemblemd-master/tests/tests/temp_results/remote_file.txt
+file closed or not:  False
+fname:  [&apos;remote&apos;]
+</system-out></testcase><testcase classname="tests.tests.E2E_test.test_replicaexchange_E2E.TestReplicaExchangePattern" file="tests/tests/E2E_test/test_replicaexchange_E2E.py" line="188" name="test_replica_exchange" time="100.170893192"><system-out>Project:  TG-MCB090174
+Username:  tg831932
+RE simulation finished!
+Simulation performed 1 cycles for 2 replicas. In your working directory you should
+have 2 md_input_x_y.md files and 2 md_input_x_y.out files where x in {0,1,2,...1} and y in {0,1,...0}.
+.md file is replica input file and .out is output file providing number of occurrences of each character.
+</system-out></testcase><testcase classname="tests.tests.E2E_test.test_simulation_analysis_loop.TestSAL" file="tests/tests/E2E_test/test_simulation_analysis_loop.py" line="47" name="test_sal" time="111.765423059"><system-out>Project:  TG-MCB090174
+Username:  tg831932
+
+Iteration 1
+   * Levenshtein Distances: [956]
+   * Mean Levenshtein Distance: 956
+</system-out></testcase></testsuite>
