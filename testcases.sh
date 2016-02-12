@@ -1,9 +1,11 @@
-py.test test_execution_context_api.py --html=./reports/execution_context_api_results.html --junitxml=./reports/execution_context_api_results.xml
+CWD=$HOME"/radical.ensemblemd-master/tests/tests"
+PWD=$CWD"/patterns"
+EXWD=$CWD"/execution_api"
+E2EWD=$CWD"/E2E_test"
+#echo $CWD
 
-py.test ./patterns/*.py --html=./reports/patterns_result.html --junitxml=./reports/patterns_result.xml
 
-py.test test_kernel_api.py --html=./reports/kernel_api_result.html --junitxml=./reports/kernel_api_result.xml
-
-py.test test_copy_output_file.py --html=./reports/copy_output_result.html --junitxml=./reports/copy_output_result.xml
-
+sh $PWD"/tests_patterns.sh"
+sh $EXWD"/executionapi_testcase.sh"
+sh $E2EWD"/E2E_testcases.sh"
 
