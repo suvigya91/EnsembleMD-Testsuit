@@ -1,3 +1,14 @@
+#---------------------------------------------------------------------------
+#
+#This testcase tests AllPair Pattern APIs
+#1. import
+#2. name
+#3. instances
+#4. steps
+#5. step_n()
+#
+#---------------------------------------------------------------------------
+
 import os
 import sys
 import glob

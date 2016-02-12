@@ -1,3 +1,15 @@
+
+#---------------------------------------------------------------------------
+#
+#This testcase tests Execution context Apis:
+# 1. test import
+# 2. test name
+# 3. allocate() - resource allocations
+# 4. run() - execute job on resource
+# 5. deallocate()- deallocation of job
+#
+#---------------------------------------------------------------------------
+
 import os
 import sys
 import glob

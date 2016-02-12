@@ -1,3 +1,19 @@
+#---------------------------------------------------------------------------
+#
+#This testcase tests AllPair Pattern APIs
+#1. import
+#2. name
+#3. add_replicas()
+#4. initialize_replica()
+#5. build_input_file()
+#6. get_swap_matrix()
+#7. perform_swap()
+#8. prepare_replica_for_md()
+#9. prepare_replica_for_exchange()
+#10. exchange()
+#
+#---------------------------------------------------------------------------
+
 import os
 import sys
 import glob

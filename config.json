@@ -64,7 +64,7 @@
         "xsede.gordon" : {
 	    "username" :"suvigya",
             "project"  : "TG-MCB090174",
-            "queue"    : "debug",
+            "queue"    : "normal",
             "schema"   : "ssh"
         },
 

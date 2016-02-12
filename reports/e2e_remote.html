@@ -339,7 +339,7 @@ function one_row_for_data() {
     });
 }
 </script>
-    <p>Report generated on 06-Feb-2016 at 23:52:32</p>
+    <p>Report generated on 11-Feb-2016 at 00:09:45</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -349,7 +349,7 @@ function one_row_for_data() {
         <td>Python</td>
         <td>2.7.6</td></tr></table>
     <h2>Summary</h2>
-    <p>5 tests ran in 407.81 seconds.<br/><span class="passed">4 passed</span>, <span class="skipped">0 skipped</span>, <span class="failed">1 failed</span>, <span class="error">0 errors</span>.<br/><span class="skipped">0 expected failures</span>, <span class="failed">0 unexpected passes</span>.</p>
+    <p>5 tests ran in 421.81 seconds.<br/><span class="passed">3 passed</span>, <span class="skipped">0 skipped</span>, <span class="failed">2 failed</span>, <span class="error">0 errors</span>.<br/><span class="skipped">0 expected failures</span>, <span class="failed">0 unexpected passes</span>.</p>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -365,32 +365,86 @@ function one_row_for_data() {
           <td class="col-duration">0.00</td>
           <td class="col-links"></td>
           <td class="extra">
-            <div class="log">cmdopt = 'xsede.stampede'<br/><br/>    def test_answer(cmdopt):<br/>        if cmdopt == "type1":<br/>            print ("first")<br/>        elif cmdopt == "type2":<br/>            print ("second")<br/>&gt;       assert 0 # to see what was printed<br/><span class="error">E       assert 0</span><br/><br/>test_1.py:8: AssertionError<br/></div></td></tr>
+            <div class="log">cmdopt = 'xsede.gordon'<br/><br/>    def test_answer(cmdopt):<br/>        if cmdopt == "type1":<br/>            print ("first")<br/>        elif cmdopt == "type2":<br/>            print ("second")<br/>&gt;       assert 0 # to see what was printed<br/><span class="error">E       assert 0</span><br/><br/>test_1.py:8: AssertionError<br/></div></td></tr>
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">tests/tests/E2E_test/test_allpairs_example.py::TestAllPairs::()::test_all_pairs_remote</td>
-          <td class="col-duration">101.49</td>
+          <td class="col-duration">99.39</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">tests/tests/E2E_test/test_pipeline_E2E.py::TestPipelinePattern::()::test_pipeline_remote</td>
-          <td class="col-duration">94.18</td>
+          <td class="col-duration">108.24</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
-        <tr class="passed results-table-row">
-          <td class="col-result">Passed</td>
+        <tr class="failed results-table-row">
+          <td class="col-result">Failed</td>
           <td class="col-name">tests/tests/E2E_test/test_replicaexchange_E2E.py::TestReplicaExchangePattern::()::test_replica_exchange</td>
-          <td class="col-duration">100.17</td>
+          <td class="col-duration">93.94</td>
           <td class="col-links"></td>
           <td class="extra">
-            <div class="empty log">No log output captured.</div></td></tr>
+            <div class="log">self = &lt;test_replicaexchange_E2E.TestReplicaExchangePattern instance at 0x7fee28c9bd40&gt;, cmdopt = 'xsede.gordon'<br/><br/>    def test_replica_exchange(self,cmdopt):<br/>    #if __name__ == "__main__":<br/>        resource = cmdopt<br/>        try:<br/>    <br/>            with open('/home/suvigya/radical.ensemblemd-master/tests/tests/config.json') as data_file:<br/>                config = json.load(data_file)<br/>    <br/>            print 'Project: ',config[resource]['project']<br/>            print 'Username: ',config[resource]['username']<br/>            # Create a new static execution context with one resource and a fixed<br/>            # number of cores and runtime.<br/>    <br/>            workdir_local = os.getcwd()<br/>            cluster = SingleClusterEnvironment(<br/>                            resource=resource,<br/>                            cores=1,<br/>                            walltime=15,<br/>                            username=config[resource]['username'],<br/>    <br/>                            project=config[resource]['project'],<br/>                            access_schema = config[resource]['schema'],<br/>                            queue = config[resource]['queue'],<br/>    <br/>                            database_url='mongodb://suvigya:temp123@ds051585.mongolab.com:51585/rutgers_thesis',<br/>                            #database_name='myexps',<br/>            )<br/>    <br/>            # Allocate the resources.<br/>            cluster.allocate()<br/>    <br/>            # creating RE pattern object<br/>            re_pattern = _TestRePattern(workdir_local)<br/>    <br/>            # set number of replicas<br/>            re_pattern.replicas = 2<br/>    <br/>            # set number of cycles<br/>            re_pattern.nr_cycles = 1<br/>    <br/>            # initializing replica objects<br/>            replicas = re_pattern.initialize_replicas()<br/>    <br/>            re_pattern.add_replicas( replicas )<br/>    <br/>            # run RE simulation<br/>            cluster.run(re_pattern, force_plugin="replica_exchange.static_pattern_1")<br/>    <br/>            cluster.deallocate()<br/>    <br/>            print "RE simulation finished!"<br/>            print "Simulation performed {0} cycles for {1} replicas. In your working directory you should".format(re_pattern.nr_cycles, re_pattern.replicas)<br/>            print "have {0} md_input_x_y.md files and {0} md_input_x_y.out files where x in {{0,1,2,...{1}}} and y in {{0,1,...{2}}}.".format( (re_pattern.nr_cycles*re_pattern.replicas), (re_pattern.replicas-1), (re_pattern.nr_cycles-1) )<br/>            print ".md file is replica input file and .out is output file providing number of occurrences of each character."<br/>    <br/>&gt;           assert os.path.isfile("./md_input_0_0.out") and os.path.isfile("./md_input_1_0.out")<br/><span class="error">E           assert (&lt;function isfile at 0x7fee3151df50&gt;('./md_input_0_0.out'))</span><br/><span class="error">E            +  where &lt;function isfile at 0x7fee3151df50&gt; = &lt;module 'posixpath' from '/home/suvigya/myenv/lib/python2.7/posixpath.pyc'&gt;.isfile</span><br/><span class="error">E            +    where &lt;module 'posixpath' from '/home/suvigya/myenv/lib/python2.7/posixpath.pyc'&gt; = os.path</span><br/><br/>test_replicaexchange_E2E.py:183: AssertionError<br/>----------------------------- Captured stdout call -----------------------------<br/>Project:  TG-MCB090174
+Username:  suvigya
+RE simulation finished!
+Simulation performed 1 cycles for 2 replicas. In your working directory you should
+have 2 md_input_x_y.md files and 2 md_input_x_y.out files where x in {0,1,2,...1} and y in {0,1,...0}.
+.md file is replica input file and .out is output file providing number of occurrences of each character.
+----------------------------- Captured stderr call -----------------------------<br/>2016-02-11 00:07:34,687: radical.saga.pty    : MainProcess                     : InputFileTransferWorker-1: ERROR   : Could not detect shell prompt (timeout) (/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py +288 (_initialize_pty)  :  raise se.NoSuccess (&quot;Could not detect shell prompt (timeout)&quot;))
+Traceback (most recent call last):
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py&quot;, line 288, in _initialize_pty
+    raise se.NoSuccess (&quot;Could not detect shell prompt (timeout)&quot;)
+NoSuccess: Could not detect shell prompt (timeout) (/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py +288 (_initialize_pty)  :  raise se.NoSuccess (&quot;Could not detect shell prompt (timeout)&quot;))
+2016-02-11 00:07:34,787: radical.pilot       : MainProcess                     : InputFileTransferWorker-1: ERROR   : Could not detect shell prompt (timeout) (/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py +288 (_initialize_pty)  :  raise se.NoSuccess (&quot;Could not detect shell prompt (timeout)&quot;))
+Traceback (most recent call last):
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/radical/pilot/controller/input_file_transfer_worker.py&quot;, line 186, in run
+    saga_dir.copy(input_file_url, target, flags=copy_flags)
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/namespace/directory.py&quot;, line 353, in copy
+    if url_2  :  return self._adaptor.copy (url_1, url_2, flags, ttype=ttype)
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/adaptors/cpi/decorators.py&quot;, line 57, in wrap_function
+    return sync_function (self, *args, **kwargs)
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/adaptors/shell/shell_file.py&quot;, line 556, in copy
+    files_copied = copy_shell.stage_to_remote (src.path, tgt.path, rec_flag)
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/utils/pty_shell.py&quot;, line 906, in stage_to_remote
+    raise ptye.translate_exception (e)
+NoSuccess: Could not detect shell prompt (timeout) (/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py +288 (_initialize_pty)  :  raise se.NoSuccess (&quot;Could not detect shell prompt (timeout)&quot;))
+2016-02-11 00:07:34,939: radical.pilot       : MainProcess                     : InputFileTransferWorker-1: ERROR   : {&apos;timestamp&apos;: 1455167254.787902, &apos;message&apos;: &apos;Input transfer failed: copy failed(Could not detect shell prompt (timeout) (/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py +288 (_initialize_pty)  :  raise se.NoSuccess (&quot;Could not detect shell prompt (timeout)&quot;)))&apos;}
+Traceback (most recent call last):
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/radical/pilot/controller/input_file_transfer_worker.py&quot;, line 189, in run
+    raise Exception(&quot;copy failed(%s)&quot; % e.message)
+Exception: copy failed(Could not detect shell prompt (timeout) (/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py +288 (_initialize_pty)  :  raise se.NoSuccess (&quot;Could not detect shell prompt (timeout)&quot;)))
+Exception in thread InputFileTransferWorker-1:
+Traceback (most recent call last):
+  File &quot;/usr/lib/python2.7/threading.py&quot;, line 810, in __bootstrap_inner
+    self.run()
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/radical/pilot/controller/input_file_transfer_worker.py&quot;, line 189, in run
+    raise Exception(&quot;copy failed(%s)&quot; % e.message)
+Exception: copy failed(Could not detect shell prompt (timeout) (/home/suvigya/myenv/local/lib/python2.7/site-packages/saga/utils/pty_shell_factory.py +288 (_initialize_pty)  :  raise se.NoSuccess (&quot;Could not detect shell prompt (timeout)&quot;)))
+
+2016-02-11 00:07:36,858: radical.enmd.replica_exchange.static_pattern_1: MainProcess                     : Thread-21      : ERROR   : ComputeUnit error: STDERR: None, STDOUT: None
+2016-02-11 00:07:36,858: radical.enmd.replica_exchange.static_pattern_1: MainProcess                     : Thread-21      : ERROR   : Pattern execution FAILED.
+2016-02-11 00:07:36,859: radical.pilot       : MainProcess                     : Thread-21      : ERROR   : unit manager controller thread caught system exit -- forcing application shutdown
+Traceback (most recent call last):
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/radical/pilot/controller/unit_manager_controller.py&quot;, line 261, in run
+    self.call_unit_state_callbacks(unit_id, new_state)
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/radical/pilot/controller/unit_manager_controller.py&quot;, line 198, in call_unit_state_callbacks
+    cb(self._shared_data[unit_id][&apos;facade_object&apos;], new_state)
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/radical/ensemblemd/exec_plugins/replica_exchange/static_pattern_1.py&quot;, line 58, in unit_state_cb
+    sys.exit(1)
+SystemExit: 1
+Traceback (most recent call last):
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/radical/ensemblemd/exec_plugins/replica_exchange/static_pattern_1.py&quot;, line 158, in execute_pattern
+    resource._umgr.wait_units(uids)
+  File &quot;/home/suvigya/myenv/local/lib/python2.7/site-packages/radical/pilot/unit_manager.py&quot;, line 697, in wait_units
+    time.sleep (0.5)
+KeyboardInterrupt
+</div></td></tr>
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">tests/tests/E2E_test/test_simulation_analysis_loop.py::TestSAL::()::test_sal</td>
-          <td class="col-duration">111.76</td>
+          <td class="col-duration">119.95</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>

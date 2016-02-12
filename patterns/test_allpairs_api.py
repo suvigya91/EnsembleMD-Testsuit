@@ -1,3 +1,19 @@
+
+#---------------------------------------------------------------------------
+#
+#This testcase tests AllPair Pattern APIs
+#1. import
+#2. name
+#3. permutation
+#4. set1_elements
+#5. set2_elements
+#6. set1_initialization()
+#7. set2_initialization()
+#8. element_comparision()
+#
+#---------------------------------------------------------------------------
+
+
 import os
 import sys
 import glob

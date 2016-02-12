@@ -1,3 +1,20 @@
+
+#---------------------------------------------------------------------------
+#
+#This testcase tests AllPair Pattern APIs
+#1. import
+#2. name
+#3. iterations
+#4. simulation_instances
+#5. analysis_instances
+#6. simulation_adaptivity
+#7. pre_loop()
+#8. simulation_step()
+#9. analysis_step()
+#10.post_loop()
+#
+#---------------------------------------------------------------------------
+
 import os
 import sys
 import pytest

@@ -1,3 +1,12 @@
+
+#---------------------------------------------------------------------------
+#
+#This testcase tests:
+# 1. upload_input_data api from Kernal
+# 2. download_output_data api from Kernel
+#---------------------------------------------------------------------------
+
+
 import os
 import sys
 import glob
