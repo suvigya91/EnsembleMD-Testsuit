@@ -1,4 +1,4 @@
-CWD=$HOME"/EnsembleMD\Testing"
+CWD=$HOME"/EnsembleMD Testing"
 PWD=$CWD"/patterns"
 RWD=$CWD"/reports"
 #CWD="/home/suvigya/radical.ensemblemd-master/tests/tests/patterns"
