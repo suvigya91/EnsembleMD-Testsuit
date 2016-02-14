@@ -91,7 +91,7 @@ class TestCopyInputData():
               cluster.deallocate()
               assert fname == ['passwd']
               f.close()
-              os.remove("./output_file.txt")
+              #os.remove("./output_file.txt")
 
           except Exception as er:
               print "Ensemble MD Toolkit Error: {0}".format(str(er))
