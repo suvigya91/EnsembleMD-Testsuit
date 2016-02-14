@@ -1,4 +1,4 @@
-CWD=$HOME"/EnsembleMD Testing"
+CWD=$HOME"/EnsembleMDTesting"
 PWD=$CWD"/patterns"
 EXWD=$CWD"/execution_api"
 E2EWD=$CWD"/E2E_test"
