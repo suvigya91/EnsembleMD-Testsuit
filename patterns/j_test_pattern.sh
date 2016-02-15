@@ -5,5 +5,5 @@ RWD=$CWD"/reports"
 
 py.test ./patterns/test_pipeline_api.py
 
-#EnsembleMD testing
+#EnsembleMD testing framework
 
