@@ -6,4 +6,5 @@ RWD=$CWD"/reports"
 py.test ./patterns/test_pipeline_api.py
 
 #EnsembleMD testing framework
+#MS Thesis
 
