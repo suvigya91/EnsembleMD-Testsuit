@@ -153,34 +153,34 @@ class TestNotImplemented(object):
 #TODO: check if this is right way
 class TestImplemented(object):
     def test_set_1_initialization(self):
-        try:
-            ElementSet1 = range(1,6)
-            test = _TestAllPairs(set1elements=ElementSet1,windowsize1=1)
-            assert type(test.set1element_initialization(5)) == radical.ensemblemd.Kernel
-        except Exception:
-            print 'set1element_initialization() Test Failed'
-            raise
+        #try:
+        ElementSet1 = range(1,6)
+        test = _TestAllPairs(set1elements=ElementSet1,windowsize1=1)
+        assert type(test.set1element_initialization(5)) == radical.ensemblemd.Kernel
+        #except Exception:
+        #    print 'set1element_initialization() Test Failed'
+        #    raise
         
     #----------------------------------------------        
     def test_set_2_initialization(self):
-        try:
-            ElementSet1 = range(1,6)
-            test = _TestAllPairs(set1elements=ElementSet1,windowsize1=1)
-            assert type(test.set2element_initialization(ElementSet1)) == radical.ensemblemd.Kernel
-        except Exception:
-            print 'set1element_initialization() Test Failed'
-            raise
+        #try:
+        ElementSet1 = range(1,6)
+        test = _TestAllPairs(set1elements=ElementSet1,windowsize1=1)
+        assert type(test.set2element_initialization(ElementSet1)) == radical.ensemblemd.Kernel
+        #except Exception:
+        #    print 'set1element_initialization() Test Failed'
+        #    raise
 
     #-----------------------------------------------    
     def test_element_comparision(self):
-        try:
-            ElementSet1 = range(1,6)
-            test = _TestAllPairs(set1elements=ElementSet1,windowsize1=1)
+        #try:
+        ElementSet1 = range(1,6)
+        test = _TestAllPairs(set1elements=ElementSet1,windowsize1=1)
             #elements1 = open("./files/asciifile_1.dat")
             #elements2 = open("./files/asciifile_2.dat")
-            elements1 =[1]
-            elements2 =[1]
-            assert type(test.element_comparison(elements1,elements2)) == radical.ensemblemd.Kernel
-        except Exception:
-            print 'element_comparison() Test Failed'
-            raise
+        elements1 =[1]
+        elements2 =[1]
+        assert type(test.element_comparison(elements1,elements2)) == radical.ensemblemd.Kernel
+        #except Exception:
+         #   print 'element_comparison() Test Failed'
+          #  raise

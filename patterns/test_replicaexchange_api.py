@@ -52,12 +52,12 @@ class _TestRePattern(radical.ensemblemd.patterns.replica_exchange.ReplicaExchang
     # --------------------------------------------------------------------------
     #
     def initialize_replicas(self):
-        try:
-            self.replicas+1
-        except:
-            print "Ensemble MD Toolkit Error: Number of replicas must be \
-            defined for pattern ReplicaExchange!"
-            raise
+        #try:
+        self.replicas+1
+        #except:
+        #    print "Ensemble MD Toolkit Error: Number of replicas must be \
+        #    defined for pattern ReplicaExchange!"
+        #    raise
         replicas = []
         N = self.replicas
         for k in range(N):

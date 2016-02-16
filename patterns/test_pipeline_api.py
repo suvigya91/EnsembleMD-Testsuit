@@ -80,11 +80,11 @@ class TestNotImplemented(object):
 
 class TestImplemented(object):
     def test_pattern_step_1(self):
-        try:
-            test = _TestPipeline(steps=2,instances=2)
+        #try:
+        test = _TestPipeline(steps=2,instances=2)
             #step_1() returns object of Kernel type
-            assert type(test.step_1(2)) == radical.ensemblemd.Kernel
+        assert type(test.step_1(2)) == radical.ensemblemd.Kernel
 
-        except Exception:
-            print 'Step_1() Test Failed'
-            raise
+        #except Exception:
+        #    print 'Step_1() Test Failed'
+        #    raise
