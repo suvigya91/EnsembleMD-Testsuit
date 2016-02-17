@@ -47,7 +47,7 @@ class TestCopyInputData():
       def test_copy_input_data_single(self):
 #if __name__ == '__main__':
 
-          resource = 'local.localhost'
+          #resource = 'local.localhost'
           try:
 
               with open('%s/config.json'%os.path.dirname(os.path.abspath(__file__))) as data_file:    
@@ -57,10 +57,14 @@ class TestCopyInputData():
                   # number of cores and runtime.
               
               cluster = SingleClusterEnvironment(
-                              resource=resource,
+                              resource='xsede.stampede',
                               cores=1,
                               walltime=15,
                               #username=None,
+		    	      username='tg831932',
+	                      project='TG-MCB090174',
+	                      access_schema='ssh',
+	                      queue='development',
 
                               #project=config[resource]['project'],
                               #access_schema = config[resource]['schema'],

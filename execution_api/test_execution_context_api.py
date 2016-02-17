@@ -16,6 +16,7 @@ import glob
 import pytest
 import time
 import radical.ensemblemd
+from os.path import expanduser
 
 from radical.ensemblemd.exceptions import TypeError
 from radical.ensemblemd.tests.helpers import _exception_test_helper
@@ -37,9 +38,13 @@ def enmd_setup():
     from radical.ensemblemd import SingleClusterEnvironment
     try:
         sec = SingleClusterEnvironment(
-            resource="local.localhost",
+            resource="xsede.stampede",
             cores=1,
             walltime=1,
+	    username='tg831932',
+	    project='TG-MCB090174',
+	    access_schema='ssh',
+	    queue='development',
             database_url='mongodb://suvigya:temp123@ds051585.mongolab.com:51585',
             database_name='rutgers_thesis'
             )
@@ -58,9 +63,16 @@ def enmd_setup_run(request):
     from radical.ensemblemd import SingleClusterEnvironment
     try:
         sec = SingleClusterEnvironment(
-            resource="local.localhost",
+            #resource="local.localhost",
+            #cores=1,
+            #walltime=1,
+            resource="xsede.stampede",
             cores=1,
             walltime=1,
+	    username='tg831932',
+	    project='TG-MCB090174',
+	    access_schema='ssh',
+	    queue='development',
             database_url='mongodb://suvigya:temp123@ds051585.mongolab.com:51585',
             database_name='rutgers_thesis'
             )
