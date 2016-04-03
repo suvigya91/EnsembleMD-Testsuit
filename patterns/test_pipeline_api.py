@@ -49,41 +49,41 @@ class TestBasicApi(object):
 
 #-----------------------------------------
 #Test instance
-    def test_pattern_instance(self):
+    def test_pattern_tasks(self):
         from radical.ensemblemd import Pipeline
 
-        pattern = Pipeline(steps=2,instances=2)
-        assert pattern.instances == 2
+        pattern = Pipeline(stages=2,tasks=2)
+        assert pattern.tasks == 2
 
 
 #-----------------------------------------
 #Test number of steps
-    def test_pattern_number_steps(self):
+    def test_pattern_number_stages(self):
         from radical.ensemblemd import Pipeline
 
-        pattern = Pipeline(steps=2,instances=1)
-        assert pattern.steps == 2
+        pattern = Pipeline(stages=2,tasks=1)
+        assert pattern.stages == 2
 
 
-class TestNotImplemented(object):
+#class TestNotImplemented(object):
 #-----------------------------------------
 #Test number of steps not_implemented
-    def test_pattern_steps_1_not_implemented(self):
-        from radical.ensemblemd import Pipeline
+#    def test_pattern_steps_1_not_implemented(self):
+#        from radical.ensemblemd import Pipeline
 
-        pattern = Pipeline(steps=1,instances=1)
-        with pytest.raises(NotImplementedError) as er:
-            pattern.step_1(1)
+#        pattern = Pipeline(steps=1,instances=1)
+#        with pytest.raises(NotImplementedError) as er:
+#            pattern.step_1(1)
         
 #---------------------------------------------        
 
 
-class TestImplemented(object):
-    def test_pattern_step_1(self):
+#class TestImplemented(object):
+ #   def test_pattern_step_1(self):
         #try:
-        test = _TestPipeline(steps=2,instances=2)
+ #       test = _TestPipeline(steps=2,instances=2)
             #step_1() returns object of Kernel type
-        assert type(test.step_1(2)) == radical.ensemblemd.Kernel
+ #       assert type(test.step_1(2)) == radical.ensemblemd.Kernel
 
         #except Exception:
         #    print 'Step_1() Test Failed'
