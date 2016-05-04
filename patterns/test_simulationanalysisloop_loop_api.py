@@ -88,7 +88,7 @@ class TestBasicApi(object):
         from radical.ensemblemd import SimulationAnalysisLoop
 
         pattern = SimulationAnalysisLoop(5,5,1)
-        assert pattern.simulation_instances == 5
+        assert pattern._simulation_instances == 5
 
 
 #-----------------------------------------
@@ -115,8 +115,8 @@ class TestNotImplemented(object):
         from radical.ensemblemd import SimulationAnalysisLoop
 
         pattern = SimulationAnalysisLoop(5,5,5)
-        #with pytest.raises(NotImplementedError):
-        assert pattern.pre_loop() == None
+        with pytest.raises(NotImplementedError):
+            pattern.pre_loop()
 
 
 #-----------------------------------------
@@ -144,8 +144,8 @@ class TestNotImplemented(object):
         from radical.ensemblemd import SimulationAnalysisLoop
 
         pattern = SimulationAnalysisLoop(5,5,5)
-        #with pytest.raises(NotImplementedError):
-        assert pattern.post_loop() == None
+        with pytest.raises(NotImplementedError):
+            pattern.post_loop()
 
 
 class TestImplemented():
