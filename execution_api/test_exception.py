@@ -15,7 +15,7 @@ import glob
 import pytest
 import radical.ensemblemd
 
-class test_enmdExceptions():
+class Test_enmdExceptions():
     #------------------------------------------------------------------------------
     #Tests TypeError
     def test_TypeError(self):

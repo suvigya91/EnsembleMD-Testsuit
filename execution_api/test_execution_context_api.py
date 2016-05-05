@@ -22,10 +22,11 @@ from radical.ensemblemd.exceptions import TypeError
 from radical.ensemblemd.tests.helpers import _exception_test_helper
 
 
-class _TestRun(radical.ensemblemd.Pipeline):
+class _TestRun(radical.ensemblemd.BagofTasks):
 
       def __init__(self, steps,instances):
-             radical.ensemblemd.Pipeline.__init__(self, steps,instances)
+             radical.ensemblemd.BagofTasks.__init__(self, steps,instances)
+	     print "Hello"
 
       def step_1(self, instance):
             k = radical.ensemblemd.Kernel(name="misc.hello")
@@ -81,7 +82,7 @@ def enmd_setup_run(request):
         ret_run = sec.run(test)
         ret_deallocate = sec.deallocate()
     except Exception as e:
-        print ret_run
+        #print ret_run
         raise
     return ret_allocate,ret_run,ret_deallocate
     
@@ -117,6 +118,7 @@ class TestSingleClusterEnvironmentApi(object):
     #Test deallocate()
     def test_deallocate(self,enmd_setup):
         ret_allocate,ret_deallocate = enmd_setup
+    	print ret_allocate,ret_deallocate
         assert (ret_deallocate == True)
         
     #-----------------------------------------------------

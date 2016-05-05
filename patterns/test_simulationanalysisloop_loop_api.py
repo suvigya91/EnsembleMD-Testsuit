@@ -115,8 +115,8 @@ class TestNotImplemented(object):
         from radical.ensemblemd import SimulationAnalysisLoop
 
         pattern = SimulationAnalysisLoop(5,5,5)
-        with pytest.raises(NotImplementedError):
-            pattern.pre_loop()
+        #with pytest.raises(NotImplementedError):
+        pattern.pre_loop() == None
 
 
 #-----------------------------------------
@@ -144,8 +144,8 @@ class TestNotImplemented(object):
         from radical.ensemblemd import SimulationAnalysisLoop
 
         pattern = SimulationAnalysisLoop(5,5,5)
-        with pytest.raises(NotImplementedError):
-            pattern.post_loop()
+        #with pytest.raises(NotImplementedError):
+        pattern.post_loop() == None
 
 
 class TestImplemented():

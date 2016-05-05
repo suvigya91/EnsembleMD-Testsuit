@@ -88,7 +88,7 @@ class TestAllPairs():
                             access_schema = config[resource]['schema'],
                             queue = config[resource]['queue'],
 
-                            database_url='mongodb://suvigya:temp123@ds051585.mongolab.com:51585',
+                            database_url='mongodb://suvigya:temp123@ds051585.mlab.com:51585',
                             database_name='rutgers_thesis',
             )
 
