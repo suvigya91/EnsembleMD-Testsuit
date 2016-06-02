@@ -126,7 +126,7 @@ class TestNotImplemented(object):
 
         pattern = SimulationAnalysisLoop(1,1,1)
         with pytest.raises(NotImplementedError):
-            pattern.simulation_step(1,1)
+            pattern.simulation_stage(1,1)
 
 #-----------------------------------------
 #Test analysis_step not implemented
@@ -135,7 +135,7 @@ class TestNotImplemented(object):
 
         pattern = SimulationAnalysisLoop(1,1,1)
         with pytest.raises(NotImplementedError):
-            pattern.analysis_step(1,1)
+            pattern.analysis_stage(1,1)
 
 
 #-----------------------------------------
@@ -158,12 +158,12 @@ class TestImplemented():
 
     def test_simulation_step(self):
         pattern = _TestSAL(5,5,5)
-        assert type(pattern.simulation_step(5,5))  == radical.ensemblemd.Kernel
+        assert type(pattern.simulation_stage(5,5))  == radical.ensemblemd.Kernel
 
     #--------------------------------------------
     def test_analysis_step(self):
         pattern = _TestSAL(5,5,5)
-        assert type(pattern.analysis_step(5,5)) == radical.ensemblemd.Kernel
+        assert type(pattern.analysis_stage(5,5)) == radical.ensemblemd.Kernel
 
     #--------------------------------------------
     #TODO: Implement this
