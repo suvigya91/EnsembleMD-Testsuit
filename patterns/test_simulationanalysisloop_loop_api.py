@@ -34,12 +34,12 @@ class _TestSAL(radical.ensemblemd.SimulationAnalysisLoop):
 	k.upload_input_data = ['levenshtein.py']
         return k
 
-    def simulation_step(self, iteration, instance):
+    def simulation_stage(self, iteration, instance):
         k = radical.ensemblemd.Kernel(name="misc.mkfile")
         k.arguments = ["--size=1000", "--filename=simulation-{0}-{1}.dat".format(iteration, instance)]
         return k
 
-    def analysis_step(self, iteration, instance):
+    def analysis_stage(self, iteration, instance):
         input_filename  = "simulation-{0}-{1}.dat".format(iteration, instance)
         output_filename = "analysis-{0}-{1}.dat".format(iteration, instance)
 
